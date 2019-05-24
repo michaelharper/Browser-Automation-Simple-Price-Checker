@@ -3,7 +3,7 @@ Behold, a simple price-checker thrown together using Node.js and Selenium/WebDri
 
 I've been interested in getting away from Selenium IDE for Firefox for some time and even though Selenium IDE can be extremely effective I needed to move into cross-browser testing. Browser testing aside, import.io has become mostly useless to me since implementing their 500 query/month limitation and I just don't feel like paying their usual prices for my frequency of use.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/michaelharper/Browser-Automation-Simple-Price-Checker/master/images/pdp-screenshot.png "PDP Screenshot")
 
 The below code will load MatterHackers' ColorFabb XT-CF20 Carbon Fiber Filament page and compare it to its standard price:
 
@@ -45,3 +45,9 @@ driver.quit();
 - If the price is less, console logs the message "Discounted price, you should buy!". This is probably where I will add an email notification of some sort.
 - I threw in standard test pass/fail output in case I wanted to get advanced and compare the results of this script across several days, weeks or months.
 - Finally, I exited Chrome.
+
+Here is the end result from my shell:
+
+![alt text](https://raw.githubusercontent.com/michaelharper/Browser-Automation-Simple-Price-Checker/master/images/terminal-screenshot.png "Terminal Screenshot")
+
+This script can be automated with something like [Nightwatch.js](http://nightwatchjs.org/) or simply a cron tab. I'm considering adding in either an email notification as part of the conditional but I'm thinking it could be time to try out Twilio's free tier. :D
