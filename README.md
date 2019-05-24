@@ -1,11 +1,14 @@
 # Browser Automation: Simple Price Checker with Node.js
 Behold, a simple price-checker thrown together using Node.js and Selenium/WebDriver.
 
-I've been interested in getting away from Selenium IDE for Firefox for some time and even though Selenium IDE can be extremely effective I needed to move into cross-browser testing. Browser testing aside, import.io has become mostly useless to me since implementing their 500 query/month limitation and I just don't feel like paying their prices for my frequency of use.
+I've been interested in getting away from Selenium IDE for Firefox for some time and even though Selenium IDE can be extremely effective I needed to move into cross-browser testing. Browser testing aside, import.io has become mostly useless to me since implementing their 500 query/month limitation and I just don't feel like paying their usual prices for my frequency of use.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 The below code will load MatterHackers' ColorFabb XT-CF20 Carbon Fiber Filament page and compare it to its standard price:
 
-```var webdriver = require('selenium-webdriver'),
+```
+var webdriver = require('selenium-webdriver'),
   By = webdriver.By,
   until = webdriver.until;
 
@@ -27,7 +30,8 @@ driver.findElement(By.id('price')).getText().then(function(text) {
   }
 });
 
-driver.quit();```
+driver.quit();
+```
 
 ## Here are the invdividual steps:
 
