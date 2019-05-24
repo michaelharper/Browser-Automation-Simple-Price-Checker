@@ -3,9 +3,33 @@ Behold, a simple price-checker thrown together using Node.js and Selenium/WebDri
 
 I've been interested in getting away from Selenium IDE for Firefox for some time and even though Selenium IDE can be extremely effective I needed to move into cross-browser testing. Browser testing aside, import.io has become mostly useless to me since implementing their 500 query/month limitation and I just don't feel like paying their prices for my frequency of use.
 
-The price_checker.js code will load MatterHackers' ColorFabb XT-CF20 Carbon Fiber Filament page and compare it to its standard price.
+The below code will load MatterHackers' ColorFabb XT-CF20 Carbon Fiber Filament page and compare it to its standard price:
 
-Here are the invdividual steps:
+```var webdriver = require('selenium-webdriver'),
+  By = webdriver.By,
+  until = webdriver.until;
+
+var driver = new webdriver.Builder()
+  .forBrowser('chrome')
+  .build();
+
+driver.get('https://www.matterhackers.com/store/3d-printer-filament/colorfabb-xt-cf20-1.75mm');
+driver.findElement(By.id('price')).getText().then(function(text) {
+  console.log('Current price is \'' + text + '\'');
+  var currentPrice = parseInt(text);
+  if (currentPrice < 65.95) {
+    console.log('Discounted price, you should buy!');
+  }
+  if (currentPrice !== '') {
+    console.log('Test passed');
+  } else {
+    console.log('Test failed');
+  }
+});
+
+driver.quit();```
+
+## Here are the invdividual steps:
 
 - The script loads selenium-webdriver for interaction with Chrome.
 - It then loads the builder() method boiler-plate.
